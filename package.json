@@ -4,6 +4,7 @@
   "description": "大屏展示内容",
   "author": "wondfo",
   "main": "main.js",
+  "repository": "https://github.com/liangxiaoman/build-electron",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
