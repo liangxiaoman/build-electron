@@ -3,9 +3,9 @@ const { autoUpdater} = require('electron-updater')
 const isDev = require('electron-is-dev')
 const path = require('path')
 function createWindow() {
-    Menu.setApplicationMenu(null);  
+    // Menu.setApplicationMenu(null);  
     const win = new BrowserWindow({
-        fullscreen: true,
+        // fullscreen: true,
         width: 1920,
         height: 1080,
         webPreferences: {
@@ -15,7 +15,7 @@ function createWindow() {
     const urlLocation = isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, './build/index.html')}`
     win.loadURL(urlLocation)
 }
-app.whenReady().then(() => {
+app.on('ready',() => {
     if(isDev){
 		autoUpdater.updateConfigPath = path.join(__dirname, 'dev-app-update.yml')
 	}
@@ -24,7 +24,7 @@ app.whenReady().then(() => {
     autoUpdater.checkForUpdatesAndNotify();
     autoUpdater.on('error', (error) => {
         console.log("error:",error)
-        // dialog.showErrorBox('Error:',error==null?'unkown':error)
+        dialog.showErrorBox('Error:',error==null?'unkown':error.message)
     })
     autoUpdater.on('checking-for-update',()=>{
         console.log("checking-for-update...")

@@ -1,6 +1,6 @@
 {
   "name": "build-electron",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "大屏展示内容",
   "author": "wondfo",
   "main": "main.js",
@@ -31,7 +31,7 @@
     "eject": "react-scripts eject",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
-    "release": "cross-env GH_TOKEN=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 electron-builder",
+    "release": "cross-env GH_TOKEN=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 electron-builder",
     "prerelease": "yarn build"
   },
   "homepage": "./",
