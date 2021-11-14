@@ -16,7 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React --- XMLIANG
+          Learn React --- XMLIANG V1.0.2
         </a>
         <button type="button" onClick={() => {
          window.history.back()
