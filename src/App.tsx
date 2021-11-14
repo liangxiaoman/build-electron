@@ -16,8 +16,16 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn React --- XMLIANG
         </a>
+        <button type="button" onClick={() => {
+         window.history.back()
+        }
+        }>后退</button>
+        <button type="button" onClick={() => {
+          window.top?.close(); return false
+        }
+        }>关闭</button>
       </header>
     </div>
   );
