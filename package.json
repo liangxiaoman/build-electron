@@ -1,6 +1,6 @@
 {
   "name": "build-electron",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "description": "大屏展示内容",
   "author": "wondfo",
   "main": "main.js",
@@ -29,10 +29,11 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "release": "cross-env GH_TOKEN=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 electron-builder",
+    "prerelease": "yarn build"
   },
-
-  "homepage":"./",
+  "homepage": "./",
   "build": {
     "appId": "com.build-electron-wondfo.app",
     "productName": "万孚项目",
@@ -44,7 +45,9 @@
       "preload.js"
     ],
     "extends": null,
-
+    "publish": [
+      "github"
+    ],
     "directories": {
       "buildResources": "assets"
     },
@@ -76,7 +79,8 @@
     },
     "win": {
       "target": [
-        "msi", "nsis"
+        "msi",
+        "nsis"
       ],
       "icon": "assets/icon.ico",
       "artifactName": "${productName}-Web-Setup-${version}.${ext}",
@@ -110,6 +114,7 @@
     "concurrently": "^6.3.0",
     "cross-env": "^7.0.3",
     "electron": "^15.3.1",
-    "electron-builder": "^22.13.1"
+    "electron-builder": "^22.13.1",
+    "electron-updater": "^4.3.9"
   }
 }
